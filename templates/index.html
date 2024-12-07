@@ -239,15 +239,18 @@
             }
 
             const result = await response.json();
+            const riskLevel =
+              result.predictions[0] === 1 ? "High Risk" : "Low Risk";
+            const riskClass =
+              result.predictions[0] === 1 ? "risk-high" : "risk-low";
+
             outputDiv.innerHTML = `
-                    <h3>Prediction Result</h3>
-                    <p><strong>Risk Prediction:</strong> ${
-                      result.predictions[0]
-                    }</p>
-                    <p><strong>Probabilities:</strong> ${result.probabilities[0].join(
-                      ", "
-                    )}</p>
-                `;
+                <h3>Risk Assessment Result</h3>
+                <p>
+                    <strong>Risk Level:</strong>
+                    <span class="risk-indicator ${riskClass}">${riskLevel}</span>
+                </p>
+            `;
           } catch (error) {
             outputDiv.innerHTML = `<p class="error">Error: ${error.message}</p>`;
           }

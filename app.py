@@ -1,10 +1,11 @@
 import os
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 import pandas as pd
 import catboost
 
 # Load the CatBoost model
-model_path = "./catboost_model.cbm"
+model_path = "./catboost_model2.cbm"
 model = catboost.CatBoostClassifier()
 
 if os.path.exists(model_path):
@@ -17,6 +18,7 @@ else:
 
 # Initialize Flask application
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 @app.route('/')
 def home():
