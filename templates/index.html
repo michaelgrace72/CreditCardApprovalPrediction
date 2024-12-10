@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -49,7 +49,7 @@
               <option value="3">Higher Education</option>
             </select>
 
-            <label for="FLAG_WORK_PHONE">Work Phone Included</label>
+            <label for="FLAG_WORK_PHONE">Owns Work Phone</label>
             <select id="FLAG_WORK_PHONE">
               <option value="1">Yes</option>
               <option value="0">No</option>
@@ -61,7 +61,7 @@
               <option value="0">No</option>
             </select>
 
-            <label for="FLAG_EMAIL">Email Included</label>
+            <label for="FLAG_EMAIL">Owns an Email</label>
             <select id="FLAG_EMAIL">
               <option value="1">Yes</option>
               <option value="0">No</option>
@@ -74,9 +74,6 @@
           <div class="form-grid">
             <label for="CNT_FAM_MEMBERS">Family Members Count</label>
             <input type="number" id="CNT_FAM_MEMBERS" min="1" />
-
-            <label for="MONTHS_BALANCE">Months Balance</label>
-            <input type="number" id="MONTHS_BALANCE" min="0" />
 
             <label for="INCOME">Income Level</label>
             <select id="INCOME">
@@ -113,7 +110,8 @@
             <label>Name Income Type</label>
             <select id="NAME_INCOME_TYPE">
               <option value="Commercial associate">Commercial associate</option>
-              <option value="State servant">State servant</option>
+              <option value="State servant">Pensioner</option>
+              <option value="State servant">Student</option>
               <option value="Working">Working</option>
             </select>
 
@@ -161,37 +159,34 @@
           const data = [
             {
               CODE_GENDER: parseInt(
-                document.getElementById("CODE_GENDER").value
+                document.getElementById("CODE_GENDER").value,
               ),
               FLAG_OWN_CAR: parseInt(
-                document.getElementById("FLAG_OWN_CAR").value
+                document.getElementById("FLAG_OWN_CAR").value,
               ),
               FLAG_OWN_REALTY: parseInt(
-                document.getElementById("FLAG_OWN_REALTY").value
+                document.getElementById("FLAG_OWN_REALTY").value,
               ),
               CNT_CHILDREN: parseInt(
-                document.getElementById("CNT_CHILDREN").value
+                document.getElementById("CNT_CHILDREN").value,
               ),
               NAME_EDUCATION_TYPE: parseInt(
-                document.getElementById("NAME_EDUCATION_TYPE").value
+                document.getElementById("NAME_EDUCATION_TYPE").value,
               ),
               FLAG_WORK_PHONE: parseInt(
-                document.getElementById("FLAG_WORK_PHONE").value
+                document.getElementById("FLAG_WORK_PHONE").value,
               ),
               FLAG_PHONE: parseInt(document.getElementById("FLAG_PHONE").value),
               FLAG_EMAIL: parseInt(document.getElementById("FLAG_EMAIL").value),
               CNT_FAM_MEMBERS: parseFloat(
-                document.getElementById("CNT_FAM_MEMBERS").value
-              ),
-              MONTHS_BALANCE: parseFloat(
-                document.getElementById("MONTHS_BALANCE").value
+                document.getElementById("CNT_FAM_MEMBERS").value,
               ),
               INCOME: parseInt(document.getElementById("INCOME").value),
               EMPLOYMENT_YEARS: parseFloat(
-                document.getElementById("EMPLOYMENT_YEARS").value
+                document.getElementById("EMPLOYMENT_YEARS").value,
               ),
               EMPLOYMENT_STATUS: parseInt(
-                document.getElementById("EMPLOYMENT_STATUS").value
+                document.getElementById("EMPLOYMENT_STATUS").value,
               ),
               AGE_GROUP: parseInt(document.getElementById("AGE_GROUP").value),
               "NAME_INCOME_TYPE_Commercial associate":
