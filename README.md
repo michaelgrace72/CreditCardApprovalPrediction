@@ -1,6 +1,6 @@
 <a id="readme-top"></a>
 
-# Credit Risk Model Application
+# Credit Card Risk Classification for Applicant Evaluation
 
 A web-based application that predicts credit card approval risk using machine learning model.
 
