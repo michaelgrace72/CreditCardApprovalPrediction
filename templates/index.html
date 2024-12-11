@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -159,34 +159,34 @@
           const data = [
             {
               CODE_GENDER: parseInt(
-                document.getElementById("CODE_GENDER").value,
+                document.getElementById("CODE_GENDER").value
               ),
               FLAG_OWN_CAR: parseInt(
-                document.getElementById("FLAG_OWN_CAR").value,
+                document.getElementById("FLAG_OWN_CAR").value
               ),
               FLAG_OWN_REALTY: parseInt(
-                document.getElementById("FLAG_OWN_REALTY").value,
+                document.getElementById("FLAG_OWN_REALTY").value
               ),
               CNT_CHILDREN: parseInt(
-                document.getElementById("CNT_CHILDREN").value,
+                document.getElementById("CNT_CHILDREN").value
               ),
               NAME_EDUCATION_TYPE: parseInt(
-                document.getElementById("NAME_EDUCATION_TYPE").value,
+                document.getElementById("NAME_EDUCATION_TYPE").value
               ),
               FLAG_WORK_PHONE: parseInt(
-                document.getElementById("FLAG_WORK_PHONE").value,
+                document.getElementById("FLAG_WORK_PHONE").value
               ),
               FLAG_PHONE: parseInt(document.getElementById("FLAG_PHONE").value),
               FLAG_EMAIL: parseInt(document.getElementById("FLAG_EMAIL").value),
               CNT_FAM_MEMBERS: parseFloat(
-                document.getElementById("CNT_FAM_MEMBERS").value,
+                document.getElementById("CNT_FAM_MEMBERS").value
               ),
               INCOME: parseInt(document.getElementById("INCOME").value),
               EMPLOYMENT_YEARS: parseFloat(
-                document.getElementById("EMPLOYMENT_YEARS").value,
+                document.getElementById("EMPLOYMENT_YEARS").value
               ),
               EMPLOYMENT_STATUS: parseInt(
-                document.getElementById("EMPLOYMENT_STATUS").value,
+                document.getElementById("EMPLOYMENT_STATUS").value
               ),
               AGE_GROUP: parseInt(document.getElementById("AGE_GROUP").value),
               "NAME_INCOME_TYPE_Commercial associate":
@@ -238,12 +238,17 @@
               result.predictions[0] === 1 ? "High Risk" : "Low Risk";
             const riskClass =
               result.predictions[0] === 1 ? "risk-high" : "risk-low";
+            const confidenceLevel = result.confidence_levels[0].toFixed(2);
 
             outputDiv.innerHTML = `
                 <h3>Risk Assessment Result</h3>
                 <p>
                     <strong>Risk Level:</strong>
                     <span class="risk-indicator ${riskClass}">${riskLevel}</span>
+                </p>
+                <p>
+                    <strong>Confidence Level:</strong>
+                    <span>${confidenceLevel}%</span>
                 </p>
             `;
           } catch (error) {

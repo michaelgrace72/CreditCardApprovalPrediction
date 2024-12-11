@@ -84,10 +84,17 @@ def predict():
         # Check if the model is trained
         if model.is_fitted():
             # Make predictions
-            print(len(df.columns))
             predictions = model.predict(df)
-            print(predictions)
-            return jsonify({"predictions": predictions.tolist()})
+            probabilities = model.predict_proba(df)
+            
+            # Get confidence level (max probability) as percentage
+            confidence_levels = probabilities.max(axis=1) * 100
+            
+            # Return both predictions and confidence levels
+            return jsonify({
+                "predictions": predictions.tolist(),
+                "confidence_levels": confidence_levels.tolist()
+            })
         else:
             return jsonify(
                 {
